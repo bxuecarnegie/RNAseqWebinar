@@ -2,7 +2,7 @@
 # Central configuration for the non-SLURM RNAseqWebinar rewrite.
 # Paths may be relative to the directory where you launch the scripts.
 
-FASTQ_DIR="FASTQ"
+FASTQ_DIR="/home/bxue/Downloads/RNAseq/Tidestromia/KXCSBV_fastq"
 RAW_MANIFEST="samples.tsv"
 TRIMMED_MANIFEST="trimmomatic_output/trimmed_samples.tsv"
 
@@ -37,7 +37,7 @@ KEEP_BOTH_READS=true
 
 # 03 HISAT2
 HISAT2_INPUT_MANIFEST="$TRIMMED_MANIFEST"  # Change to samples.tsv to skip trimming.
-HISAT2_REFERENCE_FASTA="reference.fasta"
+HISAT2_REFERENCE_FASTA="/home/bxue/Downloads/RNAseq/Tidestromia/Genomes/Tidestromia_oblongifolia_DP_v2_Genome_Assembly.fasta"
 HISAT2_OUTPUT_DIR="hisat2_mapping"
 HISAT2_JOBS="${HISAT2_JOBS:-2}"
 HISAT2_THREADS="${HISAT2_THREADS:-8}"
@@ -61,5 +61,5 @@ SALMON_SE_FLD_SD="${SALMON_SE_FLD_SD:-25}"
 SALMON_TRANSCRIPTS_FASTA=""
 SALMON_TX2GENE=""
 # Option B: if Option A is blank, provide genome FASTA + GFF3 and the helper will build them.
-GENOME_FASTA="genome.fasta"
-GFF3_FILE="annotation.gff3"
+GENOME_FASTA="/home/bxue/Downloads/RNAseq/Tidestromia/Genomes/Tidestromia_oblongifolia_DP_v2_Genome_Assembly.fasta"
+GFF3_FILE="a/home/bxue/Downloads/RNAseq/Tidestromia/Genomes/Tidestromia_oblongifolia_DP_v2_Genome_Annotation.gff3"
