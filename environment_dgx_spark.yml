@@ -1,21 +1,29 @@
 # NVIDIA DGX Spark / Ubuntu ARM64 (linux-aarch64)
 # No CUDA packages are required: these RNA-seq tools are CPU programs.
 name: rnaseq-webinar-dgx-spark
+
 channels:
   - conda-forge
   - bioconda
   - nodefaults
+
 dependencies:
   - python=3.12
   - fastqc=0.12.1
   - multiqc
   - trimmomatic=0.39
   - hisat2=2.2.3
-  - samtools=1.24
+
+  # Salmon 1.11.4 requires htslib >=1.23,<1.24;
+  # keep SAMtools on the same ABI series.
+  - htslib=1.23.1
+  - samtools=1.23.1
+
   - gffread=0.12.9
   - salmon=1.11.4
   - parallel
   - openjdk=17
+
   - numpy
   - pandas
   - scipy
